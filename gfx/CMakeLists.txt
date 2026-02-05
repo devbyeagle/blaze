@@ -1,13 +1,9 @@
-file(GLOB_RECURSE BLAZE_FIREFLY_SRC CONFIGURE_DEPENDS *.cpp *.h)
+set(EXPORTS_HEADERS)
 
-add_library(firefly ${BLAZE_FIREFLY_SRC})
+file(GLOB_RECURSE FIREFLY_SRC CONFIGURE_DEPENDS *.cpp)
 
-target_include_directories(firefly
-    PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-if(MSVC)
-else()
-    target_compile_options(firefly PUBLIC -Werror=switch)
-endif()
+add_library(firefly ${FIREFLY_SRC} ${EXPORTS_HEADERS})
