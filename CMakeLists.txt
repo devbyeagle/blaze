@@ -5,6 +5,9 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 option(BUILD_SHARED_LIBS "Build shared libraries" TRUE)
 
-# Add subdirectories
-add_subdirectory(gfx)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED YES)
+
+# Subdirectories
+add_subdirectory(ui)
 add_subdirectory(browser)

@@ -1,9 +1,0 @@
-set(EXPORTS_HEADERS)
-
-file(GLOB_RECURSE FIREFLY_SRC CONFIGURE_DEPENDS *.cpp)
-
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-)
-
-add_library(firefly ${FIREFLY_SRC} ${EXPORTS_HEADERS})
